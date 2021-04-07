@@ -1,3 +1,16 @@
+# Repetidor de produtos e carrinho
+## Implementado com ReactJs, Typescript e Redux
+
+Código lê um conjunto de dados de produtos teste, gerado na VTEX, e cria um repetidor com todos os produtos encontrados. Futuramente talvez eu implemente ordenação, é uma ideia interessante.
+
+Os produtos adicionados vão para um carrinho, com contador na página principal, possibilitando remoção e modificação de quantidade, com um botão para seguir para o pagamento.
+
+## Tecnologias utilizadas
+* Estilos: Styled Components e CSS puro, utilizando flex
+* Gerenciamento de estados: Redux puro, junto de uma biblioteca de persistência
+* Rotas: react-router-dom
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) template.
 
 ## Available Scripts
