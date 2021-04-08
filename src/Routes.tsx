@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 
 import { Switch, Route, Redirect } from "react-router-dom";
-
+import Home from './pages/home';
 
 const Routes = () => {
     const dispatch = useDispatch();
@@ -17,7 +17,7 @@ const Routes = () => {
     return (
        <div>
           <Switch>
-             <Route path="/" exact={true} component={() => <h1>Oi</h1>} />
+             <Route path="/" exact={true} component={() => <Home />} />
              <Route path="/carrinho" exact={true} component={() => <br />} />
              <Route path="/pagamento" exact={true} component={() => <br />} />
              
