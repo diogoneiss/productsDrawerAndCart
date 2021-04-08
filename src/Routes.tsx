@@ -17,6 +17,7 @@ const Routes = () => {
     return (
        <div>
           <Switch>
+             
              <Route path="/" exact={true} component={() => <Home />} />
              <Route path="/carrinho" exact={true} component={() => <br />} />
              <Route path="/pagamento" exact={true} component={() => <br />} />

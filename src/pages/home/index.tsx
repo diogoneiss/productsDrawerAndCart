@@ -5,6 +5,8 @@ import Logo from '../../logo.svg';
 import Data from '../../data/abaixo-10-reais.json';
 import HeadingText from './components/headingText';
 import {ProductType} from '../../types'
+import Navbar from '../../components/navbar';
+
 const Home = () => {
 
 
@@ -45,6 +47,7 @@ const IteradorProdutos = () => {
 
 return (
    <React.Fragment>
+       <Navbar />
 <HeadingText/>
 <ProductGrid>
     <IteradorProdutos />

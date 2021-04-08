@@ -22,7 +22,10 @@ const store = createStore(
    ),
 );
 export const persistor = persistStore(store);
-
+console.log('====================================');
+console.log(rootReducer);
+console.log('====================================');
+export type RootState = typeof rootReducer;
 const ReduxWrapper: React.FC = (props) => {
    return (
       <Provider store={store}>
