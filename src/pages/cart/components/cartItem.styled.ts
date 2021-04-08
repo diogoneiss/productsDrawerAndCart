@@ -5,10 +5,8 @@ display: flex;
     flex-direction: row;
     justify-content: space-between;
     
-  
-border-width: 2px;
 
-margin: 1rem;
+
 text-align: center;
 padding: 1rem;
 max-height: 150px;

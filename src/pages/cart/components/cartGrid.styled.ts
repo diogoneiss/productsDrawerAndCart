@@ -26,7 +26,9 @@ flex-wrap: wrap;
 
 	
 	border: 1px 0 solid #ccc;
-	border-radius: 0.3em;
+
+	border-style: solid;
+border-width: 1px 0;
 
 
 `;
@@ -35,12 +37,12 @@ position: relative;
 display: flex;
 align-items: stretch;
 flex-direction: column;
+justify-content: flex-start;
 flex-wrap: wrap;
 margin: 0 auto;
 
-
-	
-border: 1px 0 solid #ccc;
+border-style: solid;
+border-width: 0 0 1px 0;
 
 `;
 export const TotalSubWrapper = styled.div`
@@ -51,8 +53,6 @@ flex-wrap: wrap;
 margin: 0 auto;
 
 
-	
-border: 1px 0 solid #ccc;
 
 `;
 

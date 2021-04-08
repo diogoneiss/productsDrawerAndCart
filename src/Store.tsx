@@ -10,7 +10,7 @@ import React from "react";
 
 const persistenceConfigs = {
    key: "estadoAppCarrinho", // chave no localStorage
-   storage
+   storage,
 };
 const persistedReducer = persistReducer(persistenceConfigs, rootReducer);
 //visualizar store com o chrome
@@ -24,9 +24,8 @@ const store = createStore(
 export const persistor = persistStore(store);
 
 // Infer the `RootState` and `AppDispatch` types from the store itself
-export type RootState = ReturnType<typeof store.getState>
-export type AppDispatch = typeof store.dispatch
-
+export type RootState = ReturnType<typeof store.getState>;
+export type AppDispatch = typeof store.dispatch;
 
 const ReduxWrapper: React.FC = (props) => {
    return (
