@@ -1,6 +1,6 @@
 
 export type ProductType = {
-    title: String,
+    name: String,
     id: String,
     description?: String,
      price : number, 

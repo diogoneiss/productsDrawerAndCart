@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 
 import { Switch, Route, Redirect } from "react-router-dom";
 import Home from './pages/home';
+import Cart from './pages/cart';
 
 const Routes = () => {
     const dispatch = useDispatch();
@@ -19,7 +20,7 @@ const Routes = () => {
           <Switch>
              
              <Route path="/" exact={true} component={() => <Home />} />
-             <Route path="/carrinho" exact={true} component={() => <br />} />
+             <Route path="/carrinho" exact={true} component={() => <Cart />} />
              <Route path="/pagamento" exact={true} component={() => <br />} />
              
              {/*

@@ -1,15 +1,9 @@
 import {AnyAction} from 'redux'
+import {ProductType} from '../types/index';
 
-type Product = {
-    id: String,
-    quantity: number,
-    name: string,
-    price: number,
-    img: string
-}
 
 type InitialStateType = {
-    products: Product[] | [],
+    products: ProductType[] ,
     totalPrice: number
 }
 
@@ -30,7 +24,7 @@ const cartReducer = (state = initialState, action: AnyAction) => {
         case ACTION_TYPES.ADD_TO_CART: {
 
 
-            const addedProduct: Product = {...action.payload};
+            const addedProduct: ProductType = {...action.payload};
 
             //checking if product already on cart
             let found = false;
@@ -65,7 +59,7 @@ const cartReducer = (state = initialState, action: AnyAction) => {
         }
         case ACTION_TYPES.CHANGE_QUANTITY: {
 
-            const changedProduct: Product = action.payload.product;
+            const changedProduct: ProductType = action.payload.product;
             const changedQuantity: number = action.payload.change
 
             //checking if product already on cart
@@ -99,7 +93,7 @@ const cartReducer = (state = initialState, action: AnyAction) => {
 
         }
         case ACTION_TYPES.REMOVE_FROM_CART: {
-            const removedProduct: Product = action.payload;
+            const removedProduct: ProductType = action.payload;
           
 
             //checking if product already on cart

@@ -13,7 +13,7 @@ return (
         <StyledComponents.ProductImage src={product.img || Logo}/>
 
         <StyledComponents.TitleText>
-            {product.title}
+            {product.name}
         </StyledComponents.TitleText>
         </StyledComponents.UpperWrapper>
 
