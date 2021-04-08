@@ -8,11 +8,13 @@ flex-direction: column;
 flex-wrap: wrap;
 margin: 5em auto;
 
+box-shadow: 0 4px 8px rgba(0,0,0, 0.2);
+
 max-width: 850px;
 	
 	border: 1px 0 solid #ccc;
 	border-radius: 0.3em;
-	box-shadow: 0 1px 1px black;
+
 
 `;
 export const CartItemRepeater = styled.div`

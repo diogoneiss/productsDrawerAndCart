@@ -6,8 +6,7 @@ display: flex;
     justify-content: space-between;
     
   
-
-box-shadow: 0 4px 8px rgba(0,0,0, 0.2);
+border-width: 2px;
 
 margin: 1rem;
 text-align: center;
@@ -18,42 +17,33 @@ max-height: 150px;
 
 
 export const MiddleWrapper = styled.div`
-margin-left: 3em;
+    margin-left: 3em;
 
-
+`;
+/**
+ *     display: flex;
     flex-direction: column;
     justify-content: flex-start;
 
+    
+    align-items: flex-start; 
 
 
-    display: flex;
-
-  align-items: flex-start; /* CHANGED */
-  /*align-self: center;*/
-
-  flex-wrap: wrap;
-`;
-
+    flex-wrap: wrap;
+    text-align: left;
+ */
 export const TitleText = styled.h2`
 font-size: 1.2rem;
-  font-weight: 500;
-
-
-
+font-weight: 500;
 `
 
 export const NewPriceText = styled.p`
-
-
-font-size: 1rem;
-font-family: sans-serif;
+display: flex;
+    font-size: 1rem;
+    font-family: sans-serif;
     font-weight: 400;
-   
-    
     margin: 20px auto 0;
-    position: relative;
     bottom: 1rem;
-    
 `;
 
 export const OldPriceText = styled.p`
@@ -66,7 +56,7 @@ font-family: sans-serif;
    
     
     margin: 20px auto 0;
-    position: relative;
+
     bottom: 1rem;
 `;
 
