@@ -13,7 +13,7 @@ font-family: poppins, sans-serif;
 `;
 
 export const TitleText = styled.p`
-font-size: 1.5vw;
+font-size: 1.3vw;
   font-weight: 500;
   text-transform: uppercase;
 

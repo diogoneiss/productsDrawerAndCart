@@ -3,18 +3,14 @@ import ProductCard from './components/productCard';
 import ProductGrid from './components/productGrid';
 import Logo from '../../logo.svg';
 import Data from '../../data/abaixo-10-reais.json';
-
+import HeadingText from './components/headingText';
+import {ProductType} from '../../types'
 const Home = () => {
 
 
-    type Product = {
-        title: String,
-        description?: String,
-         price : number, 
-         img ?: string 
-        }
 
-let productArray:Array<Product> = [];
+
+let productArray:Array<ProductType> = [];
 const crudeJson = Data.items;
 
 //juntar no array
@@ -23,7 +19,8 @@ for(let i = 0; i < crudeJson.length; i++){
         title: crudeJson[i].name,
         price: Number(crudeJson[i].price)/1000,
         description: JSON.stringify((Object.values(crudeJson[i].productCategories))),
-        img: crudeJson[i].imageUrl
+        img: crudeJson[i].imageUrl,
+        id: crudeJson[i].id
     })
 }
 
@@ -39,7 +36,7 @@ const IteradorProdutos = () => {
 
         {
          productArray.map((item, key) => 
-         <ProductCard title={item.title} price={item.price} description={item.description} img={item.img} /> 
+         <ProductCard id={item.id} title={item.title} price={item.price} description={item.description} img={item.img} /> 
         )
         }
 
@@ -51,13 +48,13 @@ const IteradorProdutos = () => {
 
 return (
    <React.Fragment>
-
+<HeadingText/>
 <ProductGrid>
     <IteradorProdutos />
-        <ProductCard title={"Título"} price={1000} />
-        <ProductCard title={"Título"} price={1000} />
-        <ProductCard title={"Título"} price={1000} />
-        <ProductCard title={"Título"} price={1000} />
+        <ProductCard title={"Título"} price={1000}  id={"1"} />
+        <ProductCard title={"Título"} price={1000}  id={"1"} />
+        <ProductCard title={"Título"} price={1000}  id={"1"} />
+        <ProductCard title={"Título"} price={1000} id={"1"} />
     </ProductGrid>
    </React.Fragment>
 )

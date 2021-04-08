@@ -7,7 +7,7 @@ import Routes from "./Routes";
 
 //import Header from "./Components/Header/Navbar";
 //import Footer from "./Components/Footer";
-//import './App.css';
+import './App.css';
 
 function App() {
   return (

@@ -9,7 +9,7 @@ import { persistReducer, persistStore } from "redux-persist";
 import React from "react";
 
 const persistenceConfigs = {
-   key: "estadoApp", // chave no localStorage
+   key: "estadoAppCarrinho", // chave no localStorage
    storage
 };
 const persistedReducer = persistReducer(persistenceConfigs, rootReducer);
