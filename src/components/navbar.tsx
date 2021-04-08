@@ -11,19 +11,27 @@ justify-content: center;
 background-color: blueviolet;
 margin: 0;
 padding: 2em;
+color: white;
+flex-wrap: wrap;
+`
+const FlexBreak = styled.br`
+flex-basis: 100%;
+  height: 0;
 `
 
 
 const Navbar = () => {
 
 
-  //  const quantidade = useSelector((state:RootState) => state);
+    const produtosArray = useSelector((state:RootState) => state.cartReducer.products);
 
     return (
         <>
         <NavbarWrapper>
             
-                <button>Ir para carrinho</button>
+                <button>Ir para carrinho ({produtosArray.length} itens)</button>
+                <FlexBreak />
+               
                 </NavbarWrapper>
         </>
     )

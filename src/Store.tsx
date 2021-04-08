@@ -22,10 +22,12 @@ const store = createStore(
    ),
 );
 export const persistor = persistStore(store);
-console.log('====================================');
-console.log(rootReducer);
-console.log('====================================');
-export type RootState = typeof rootReducer;
+
+// Infer the `RootState` and `AppDispatch` types from the store itself
+export type RootState = ReturnType<typeof store.getState>
+export type AppDispatch = typeof store.dispatch
+
+
 const ReduxWrapper: React.FC = (props) => {
    return (
       <Provider store={store}>
