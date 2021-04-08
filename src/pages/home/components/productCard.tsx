@@ -5,15 +5,15 @@ import {useDispatch, useSelector} from 'react-redux';
 import {ProductType} from '../../../types';
 import addProductToCart from '../../../actions/cartActions';
 
-const ProductCard:React.FC<ProductType> = ({title, id, description, price, img}) => {
+const ProductCard:React.FC<ProductType> = (product) => {
 const dispatch = useDispatch();
 return (
     <StyledComponents.Card>
         <StyledComponents.UpperWrapper>
-        <StyledComponents.ProductImage src={img || Logo}/>
+        <StyledComponents.ProductImage src={product.img || Logo}/>
 
         <StyledComponents.TitleText>
-            {title}
+            {product.title}
         </StyledComponents.TitleText>
         </StyledComponents.UpperWrapper>
 
@@ -26,10 +26,10 @@ return (
 }
     <StyledComponents.BottomWrapper>
         <StyledComponents.PriceText>
-            R${""+price}
+            R${""+product.price}
         </StyledComponents.PriceText>
 
-        <StyledComponents.AddToCartButton onClick={() => dispatch(addProductToCart({title, id, description, price, img})) }>
+        <StyledComponents.AddToCartButton onClick={() => dispatch(addProductToCart(product)) }>
             Adicionar ao carrinho
         </StyledComponents.AddToCartButton>
         </StyledComponents.BottomWrapper>

@@ -15,28 +15,25 @@ const crudeJson = Data.items;
 
 //juntar no array
 for(let i = 0; i < crudeJson.length; i++){
+    //coloco 1 de quantidade pq não faz sentido colocar a mesma do json, já que estou fazendo o grid de produtos
     productArray.push({
         title: crudeJson[i].name,
-        price: Number(crudeJson[i].price)/1000,
+        price: Number(crudeJson[i].price)/100,
         description: JSON.stringify((Object.values(crudeJson[i].productCategories))),
         img: crudeJson[i].imageUrl,
-        id: crudeJson[i].id
+        id: crudeJson[i].id,
+        quantity: 1
     })
 }
 
-
-
-
-console.log(productArray);
-console.log(typeof productArray);
-
+//mapeia um card para cada item no array, usando desestruturação, já que sei o tipo de objeto
 const IteradorProdutos = () => {
     return (
         <>
 
         {
          productArray.map((item, key) => 
-         <ProductCard id={item.id} title={item.title} price={item.price} description={item.description} img={item.img} /> 
+         <ProductCard {...item} /> 
         )
         }
 
@@ -51,10 +48,10 @@ return (
 <HeadingText/>
 <ProductGrid>
     <IteradorProdutos />
-        <ProductCard title={"Título"} price={1000}  id={"1"} />
-        <ProductCard title={"Título"} price={1000}  id={"1"} />
-        <ProductCard title={"Título"} price={1000}  id={"1"} />
-        <ProductCard title={"Título"} price={1000} id={"1"} />
+        <ProductCard title={"Título"} price={1000}  id={"1"} quantity={1} />
+        <ProductCard title={"Título"} price={1000}  id={"1"}  quantity={1}  />
+        <ProductCard title={"Título"} price={1000}  id={"1"}   quantity={1}  />
+        <ProductCard title={"Título"} price={1000} id={"1"}  quantity={1}  />
     </ProductGrid>
    </React.Fragment>
 )

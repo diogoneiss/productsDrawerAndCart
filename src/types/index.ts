@@ -4,5 +4,6 @@ export type ProductType = {
     id: String,
     description?: String,
      price : number, 
-     img ?: string
+     img ?: string,
+     quantity: number,
 }

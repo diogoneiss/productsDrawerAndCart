@@ -30,13 +30,16 @@ const cartReducer = (state = initialState, action: AnyAction) => {
         case ACTION_TYPES.ADD_TO_CART: {
 
 
-            const addedProduct: Product = action.payload;
+            const addedProduct: Product = {...action.payload};
 
             //checking if product already on cart
             let found = false;
             let i;
-            let newProductArray = state.products;
+           
 
+            console.log("Array de produtos: ")
+            console.log(state.products);
+            
             //verificando se o id já existe dentro do array de produtos
             for(i = 0; i < state.products.length; ++i){
                 if(state.products[i].id === addedProduct.id){
@@ -45,13 +48,14 @@ const cartReducer = (state = initialState, action: AnyAction) => {
                 }
             }
 
+            const newProductArray = state.products.filter((item, key) => item.id !== addedProduct.id);
             //se o produto já existir, aumentar a quantidade
             if(found){
-                newProductArray[i].quantity += 1 ;
+               addedProduct.quantity += 1 ;
             }
-            else{
-                newProductArray = [...newProductArray, addedProduct]
-            }
+            
+            newProductArray.push(addedProduct)
+
 
 
             return {
