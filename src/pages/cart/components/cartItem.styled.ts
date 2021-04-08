@@ -13,7 +13,7 @@ margin: 1rem;
 text-align: center;
 padding: 1rem;
 max-height: 150px;
-width: 100%;
+
 `;
 
 

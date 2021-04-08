@@ -7,7 +7,7 @@ align-items: stretch;
 flex-direction: column;
 flex-wrap: wrap;
 margin: 5em auto;
-width: 100%;
+
 max-width: 850px;
 	
 	border: 1px 0 solid #ccc;
@@ -21,7 +21,7 @@ align-items: stretch;
 flex-direction: column;
 flex-wrap: wrap;
 
-width: 100%;
+
 	
 	border: 1px 0 solid #ccc;
 	border-radius: 0.3em;
@@ -35,7 +35,7 @@ align-items: stretch;
 flex-direction: column;
 flex-wrap: wrap;
 margin: 0 auto;
-width: 100%;
+
 
 	
 border: 1px 0 solid #ccc;
@@ -47,7 +47,7 @@ align-items: flex-start;
 flex-direction: row;
 flex-wrap: wrap;
 margin: 0 auto;
-width: 100%;
+
 
 	
 border: 1px 0 solid #ccc;
@@ -59,7 +59,7 @@ border: 1px 0 solid #ccc;
 export const LastButton = styled.button`
 position: relative;
 margin: 2em;
-width: 100%;
+
 padding: 1em;
 border: 0;
 background-color: blue;
