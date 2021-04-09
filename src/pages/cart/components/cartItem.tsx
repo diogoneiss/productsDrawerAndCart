@@ -20,15 +20,24 @@ const ProductCard: React.FC<ProductType> = (product, { key }) => {
                <StyledComponents.NewPriceText>R${"" + product.price}</StyledComponents.NewPriceText>
             </StyledComponents.MiddleWrapper>
          </StyledComponents.UpperWrapper>
+    
 
-         <StyledComponents.BottomWrapper>
-            <p>Quantidade: {product.quantity}</p>
-            <StyledComponents.IncreaseWrapper>
+         <StyledComponents.FinalRightWrapper>
+         <StyledComponents.RightmostWrapper>
+
+         <StyledComponents.QuantityWrapper>
+         <StyledComponents.QuantityBox type="number" id="quantity" name="quantity" value={product.quantity} max="2" readOnly />
+         <StyledComponents.QuantityLabel htmlFor="quantity">Qtd</StyledComponents.QuantityLabel>
+         </StyledComponents.QuantityWrapper>
+
+            <StyledComponents.QuantityWrapper>
                <StyledComponents.StyledButton onClick={() => null}>+</StyledComponents.StyledButton>
                <StyledComponents.StyledButton onClick={() => null}>-</StyledComponents.StyledButton>
-            </StyledComponents.IncreaseWrapper>
-            <StyledComponents.StyledButton onClick={() => null}>Remover</StyledComponents.StyledButton>
-         </StyledComponents.BottomWrapper>
+            </StyledComponents.QuantityWrapper>
+          
+         </StyledComponents.RightmostWrapper>
+         <StyledComponents.StyledButton onClick={() => null}>Remover</StyledComponents.StyledButton>
+         </StyledComponents.FinalRightWrapper>
       </StyledComponents.Card>
    );
 };

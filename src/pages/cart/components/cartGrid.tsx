@@ -8,13 +8,16 @@ type ComponentProps = {
 const ProductGrid: React.FC<ComponentProps> = ({ children }) => {
    return (
       <StyledComponents.WrapperContainer>
+          <StyledComponents.HeaderArea>
+              Meu carrinho
+          </StyledComponents.HeaderArea>
          <StyledComponents.CartItemRepeater>{children}</StyledComponents.CartItemRepeater>
          <StyledComponents.TotalWrapper>
             <StyledComponents.TotalSubWrapper>
-               <p>Total </p>
-               <p>R$ 12,90</p>
+               <StyledComponents.TotalText>Total </StyledComponents.TotalText>
+               <StyledComponents.PriceText>R$ 12,90</StyledComponents.PriceText>
             </StyledComponents.TotalSubWrapper>
-            <p>Parabéns, sua compra tem frete grátis!</p>
+            <StyledComponents.ParabensBox>Parabéns, sua compra tem frete grátis!</StyledComponents.ParabensBox>
          </StyledComponents.TotalWrapper>
 
          <StyledComponents.LastButton>Finalizar compra</StyledComponents.LastButton>

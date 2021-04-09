@@ -5,9 +5,14 @@ import CartItem from "./components/cartItem";
 import CartGrid from "./components/cartGrid";
 import Logo from "../../logo.svg";
 import Data from "../../data/abaixo-10-reais.json";
-import HeadingText from "./components/headingText";
 import { ProductType } from "../../types";
 import Navbar from "../../components/navbar";
+import styled from "styled-components";
+
+const BackgroundColor = styled.div`
+background-color: lightcyan;
+padding: 1.2em;
+`;
 
 const Cart = () => {
    const cartArray = useSelector((state: RootState) => state.cartReducer.products);
@@ -21,10 +26,11 @@ const Cart = () => {
    return (
       <React.Fragment>
          <Navbar linkPath="/" buttonText="Voltar para produtos" showNumberOfItens={false} />
-         <HeadingText />
+        <BackgroundColor>
          <CartGrid>
             <IteradorProdutos />
          </CartGrid>
+         </BackgroundColor>
       </React.Fragment>
    );
 };

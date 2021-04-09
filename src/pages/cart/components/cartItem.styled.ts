@@ -1,22 +1,23 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const Card = styled.div`
-display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    
+   display: flex;
+   flex-direction: row;
+   justify-content: space-between;
 
-
-text-align: center;
-padding: 1rem;
-max-height: 150px;
-
+   text-align: center;
+   padding: 1rem;
+   max-height: 150px;
 `;
 
-
 export const MiddleWrapper = styled.div`
-    margin-left: 3em;
+display: flex;
+   margin-left: 2em;
+   flex-direction: column;
+    justify-content: flex-start;
 
+    
+    align-items: flex-start; 
 `;
 /**
  *     display: flex;
@@ -30,92 +31,111 @@ export const MiddleWrapper = styled.div`
     flex-wrap: wrap;
     text-align: left;
  */
-export const TitleText = styled.h2`
-font-size: 1.2rem;
-font-weight: 500;
-`
-
-export const NewPriceText = styled.p`
+export const TitleText = styled.span`
 display: flex;
-    font-size: 1rem;
-    font-family: sans-serif;
-    font-weight: 400;
-    margin: 20px auto 0;
-    bottom: 1rem;
+   font-size: 1em;
+   font-weight: 500;
+   text-align: left;
 `;
 
-export const OldPriceText = styled.p`
-  display: flex;
+export const NewPriceText = styled.span`
+   display: flex;
+   font-size: 1rem;
+   font-family: sans-serif;
+   font-weight: 400;
+`;
 
-font-size: 0.9rem;
-color: darkgray;
-font-family: sans-serif;
-    font-weight: 200;
-   
-    
-    margin: 20px auto 0;
+export const OldPriceText = styled.span`
+   display: flex;
 
-    bottom: 1rem;
+   font-size: 0.9rem;
+   color: darkgray;
+   font-family: sans-serif;
+   font-weight: 200;
 `;
 
 
-export const DescriptionText = styled.p`
- font-size: 0.7vw;
-
-`
 export const UpperWrapper = styled.div`
-align-items: center;
-display: flex;
-flex-direction: row;
-justify-content: center;
-
-`;
-export const BottomWrapper = styled.div`
-display: flex;
-align-self: flex-end;
-flex-direction: row;
-justify-content: center;
-margin-left: 1em;
-
+   align-items: center;
+   display: flex;
+   flex-direction: row;
+   justify-content: center;
 `;
 
 
-export const IncreaseWrapper = styled.div`
-margin-left: 1em;
-display: flex;
-align-self: flex-end;
-    flex-direction: column;
-    justify-content: center;
+export const RightmostWrapper = styled.div`
+   display: flex;
+   align-self: flex-end;
+   flex-direction: row;
+   justify-content: center;
+   margin-left: 1em;
 `;
 
+export const QuantityBox = styled.input`
+display: inline-block;
+max-width: 2em;
+max-height: 2em;
+font-size: 1.2em;
+margin-top: 0px;
 
 
+`;
 
+export const QuantityLabel = styled.label`
+font-size: 0.5em;
+display: inline-block;
+margin-bottom: auto;
+align-self: center;
+`;
 
+export const FinalRightWrapper = styled.div`
+   margin-left: 1em;
+   display: flex;
+   align-self: flex-end;
+   flex-direction: column;
+   justify-content: center;
+`;
 
+export const QuantityWrapper = styled.div`
+   margin-left: 1em;
+   display: flex;
+   align-self: center;
+   flex-direction: column;
+   justify-content: center;
+`;
+
+export const PlusAndMinusWrapper = styled.div`
+   margin-left: 1em;
+   display: flex;
+   align-self: flex-end;
+   flex-direction: column;
+   justify-content: center;
+`;
 
 export const StyledButton = styled.button`
-font-size:0.6rem;
-border: none;
-outline: 0;
-padding: 5px;
-color: white;
-background-color: green;
-text-align: center;
-cursor: pointer;
-margin: 1em 1em;
-position: relative;
-align-self: flex-end;
+   font-size: 0.8em;
+   border-radius: 0.8em;
+   border: none;
+   outline: 0;
+   padding: 0.5em;
+   color: white;
+   background-color: green;
+   text-align: center;
+   cursor: pointer;
+   margin-bottom: 1em;
+   position: relative;
+   align-self: flex-end;
 
-
-:hover {
-    opacity: 0.7;
-}
+   :hover {
+      opacity: 0.7;
+   }
 `;
 
 export const ProductImage = styled.img`
-src: ${props => props.src};
-position: relative;
-height: 80%;
-max-height: 150px;
+   src: ${(props) => props.src};
+   position: relative;
+   height: 80%;
+   max-height: 150px;
+   border-style: solid;
+   border-width: 1px; 
 `;
