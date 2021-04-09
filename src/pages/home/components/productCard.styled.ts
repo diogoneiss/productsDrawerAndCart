@@ -14,7 +14,8 @@ export const Card = styled.div`
 `;
 
 export const TitleText = styled.p`
-   font-size: 1.5e;
+   font-size: 1.5em;
+   max-width: 18ch;
    text-transform: uppercase;
 `;
 

@@ -4,6 +4,7 @@ import Logo from "../../../logo.svg";
 import { useDispatch } from "react-redux";
 import { ProductType } from "../../../types";
 import * as Actions from "../../../actions/cartActions";
+import Price from "../../../components/priceFormatter";
 
 const ProductCard: React.FC<ProductType> = (product, { key }) => {
    const dispatch = useDispatch();
@@ -17,9 +18,11 @@ const ProductCard: React.FC<ProductType> = (product, { key }) => {
             <StyledComponents.MiddleWrapper>
                <StyledComponents.TitleText>{product.name || "Name"}</StyledComponents.TitleText>
 
-               <StyledComponents.OldPriceText>R${"" + product.price}</StyledComponents.OldPriceText>
+               <StyledComponents.OldPriceText>
+               <Price price={product.price} />
+                 </StyledComponents.OldPriceText>
 
-               <StyledComponents.NewPriceText>R${"" + product.sellingPrice}</StyledComponents.NewPriceText>
+               <StyledComponents.NewPriceText><Price price={product.sellingPrice} /></StyledComponents.NewPriceText>
             </StyledComponents.MiddleWrapper>
          </StyledComponents.UpperWrapper>
 

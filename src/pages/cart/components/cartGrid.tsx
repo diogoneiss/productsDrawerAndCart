@@ -4,6 +4,7 @@ import { emptyCart } from "../../../actions/cartActions";
 import { useDispatch } from "react-redux";
 import { useAppSelector } from "../../../Redux/hooks";
 import { useHistory } from "react-router";
+import Price from "../../../components/priceFormatter";
 
 type ComponentProps = {
    children?: React.ReactNode;
@@ -13,14 +14,8 @@ const ProductGrid: React.FC<ComponentProps> = ({ children }) => {
    const dispatch = useDispatch();
    const history = useHistory();
    const valorTotal = useAppSelector((state) => state.cartReducer.totalPrice);
-   const formatedValue = valorTotal?.toPrecision(4);
 
-   const ShowTotalValue = () => {
-      if (valorTotal <= 0) {
-         return <>R$ 0</>;
-      }
-      return <>R$ {formatedValue?.toString()?.replace(".", ",")}</>;
-   };
+
 
    return (
       <StyledComponents.WrapperContainer>
@@ -30,10 +25,10 @@ const ProductGrid: React.FC<ComponentProps> = ({ children }) => {
             <StyledComponents.TotalSubWrapper>
                <StyledComponents.TotalText>Total </StyledComponents.TotalText>
                <StyledComponents.PriceText>
-                  <ShowTotalValue />
+               <Price price={valorTotal} />
                </StyledComponents.PriceText>
             </StyledComponents.TotalSubWrapper>
-            {valorTotal > 12.0 && (
+            {valorTotal > 10.0 && (
                <StyledComponents.ParabensBox>Parabéns, sua compra tem frete grátis!</StyledComponents.ParabensBox>
             )}
          </StyledComponents.TotalWrapper>

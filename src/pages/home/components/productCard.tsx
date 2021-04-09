@@ -4,6 +4,7 @@ import Logo from "../../../logo.svg";
 import { useDispatch } from "react-redux";
 import { ProductType } from "../../../types";
 import addProductToCart from "../../../actions/cartActions";
+import Price from "../../../components/priceFormatter";
 
 const ProductCard: React.FC<ProductType> = (product) => {
    const dispatch = useDispatch();
@@ -22,7 +23,9 @@ const ProductCard: React.FC<ProductType> = (product) => {
         </StyledComponents.DescriptionText>
         */}
          <StyledComponents.BottomWrapper>
-            <StyledComponents.PriceText>R${"" + product.price}</StyledComponents.PriceText>
+            <StyledComponents.PriceText>
+               <Price price={product.sellingPrice} />
+            </StyledComponents.PriceText>
 
             <StyledComponents.AddToCartButton onClick={() => dispatch(addProductToCart(product))}>
                Adicionar ao carrinho
