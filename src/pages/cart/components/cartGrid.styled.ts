@@ -34,6 +34,7 @@ export const CartItemRepeater = styled.div`
    border-style: solid;
    border-width: 1px 0;
    border-color: darkgrey;
+   margin: 1em 0;
 `;
 
 //Wrapper que conterá Total, Preço e a mensagem de frete grátis, como column
@@ -43,7 +44,7 @@ export const TotalWrapper = styled.div`
    position: relative;
    display: flex;
    align-items: center;
-   align-self: stretch;
+   align-self: center;
    flex-direction: column;
    justify-content: center;
    flex-wrap: wrap;
@@ -69,10 +70,12 @@ export const TotalSubWrapper = styled.div`
 export const TotalText = styled.span`
    display: flex;
    align-self: flex-start;
+  
 `;
 export const PriceText = styled.span`
    display: flex;
    margin-left: auto;
+   margin-right: 1em;
 `;
 //div contendo o frete grátis
 export const ParabensBox = styled.div`
@@ -81,7 +84,12 @@ export const ParabensBox = styled.div`
    border-radius: 1em;
    color: darkgreen;
    background-color: lightgreen;
+   margin: 0 2em;
    margin-bottom: 1em;
+   @media (max-width:576px) {
+     max-width: 80%;
+      justify-content: center;
+  }
 `;
 //botão de pagar e continuar
 export const LastButton = styled.button`

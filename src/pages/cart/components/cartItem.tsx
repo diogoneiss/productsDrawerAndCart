@@ -29,27 +29,28 @@ const ProductCard: React.FC<ProductType> = (product, { key }) => {
          <StyledComponents.FinalRightWrapper>
             <StyledComponents.RightmostWrapper>
                <StyledComponents.QuantityWrapper>
-                  <StyledComponents.QuantityBox id="quantity">{localQuantity}</StyledComponents.QuantityBox>
                   <StyledComponents.QuantityLabel>Qtd</StyledComponents.QuantityLabel>
+                  <StyledComponents.QuantityBox id="quantity">{localQuantity}</StyledComponents.QuantityBox>
+     
                </StyledComponents.QuantityWrapper>
 
                <StyledComponents.QuantityWrapper>
-                  <StyledComponents.StyledButton
+                  <StyledComponents.StyledButtonQuantity
                      onClick={() => {
                         dispatch(Actions.changeProductQuantity(product, +1));
                         setLocalQuantity(localQuantity + 1);
                      }}
                   >
                      {" + "}
-                  </StyledComponents.StyledButton>
-                  <StyledComponents.StyledButton
+                  </StyledComponents.StyledButtonQuantity>
+                  <StyledComponents.StyledButtonQuantity
                      onClick={() => {
                         dispatch(Actions.changeProductQuantity(product, -1));
                         setLocalQuantity(localQuantity - 1);
                      }}
                   >
                      {" - "}
-                  </StyledComponents.StyledButton>
+                  </StyledComponents.StyledButtonQuantity>
                </StyledComponents.QuantityWrapper>
             </StyledComponents.RightmostWrapper>
             <StyledComponents.StyledButton onClick={() => dispatch(Actions.removeProductToCart(product))}>

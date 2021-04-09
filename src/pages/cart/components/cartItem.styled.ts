@@ -1,115 +1,102 @@
 import styled from "styled-components";
 
 export const Card = styled.div`
-   display: flex;
-   font-weight: bold;
-   flex-direction: row;
-   justify-content: space-between;
+  display: flex;
 
-   text-align: center;
-   padding: 1rem;
-   max-height: 150px;
+  
+
+  @media (max-width:576px) {
+      display: flex;
+      flex-direction: column;
+  }
+`;
+
+export const UpperWrapper = styled.div`
+   display: flex;
+   width: 70%;
+   gap: 1em;
+
+   @media (max-width:576px) {
+      width: 100%;
+      justify-content: space-around;
+  }
 `;
 
 export const MiddleWrapper = styled.div`
    display: flex;
-   margin-left: 2em;
+
    flex-direction: column;
-   justify-content: flex-start;
-
-   align-items: flex-start;
+   justify-content: center;
 `;
-/**
- *     display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
 
-    
-    align-items: flex-start; 
-
-
-    flex-wrap: wrap;
-    text-align: left;
- */
 export const TitleText = styled.span`
-   display: flex;
+
    font-size: 1em;
    font-weight: 700;
    text-align: left;
+@media (max-width:576px) {
+      font-size: 0.8em;
+  }
 `;
 
 export const NewPriceText = styled.span`
-   display: flex;
+
    margin-top: 0.1em;
    font-size: 1rem;
+   font-weight: 700;
    font-family: sans-serif;
 `;
 
 export const OldPriceText = styled.span`
-   display: flex;
+
    margin-top: 0.3em;
    font-size: 0.8em;
    color: darkgray;
    font-family: sans-serif;
 `;
 
-export const UpperWrapper = styled.div`
-   align-items: center;
-   display: flex;
-   flex-direction: row;
-   justify-content: center;
-`;
 
 export const RightmostWrapper = styled.div`
    display: flex;
-   align-self: flex-end;
+
    flex-direction: row;
    justify-content: center;
-   margin-left: 1em;
+   gap: 1em;
+   margin-bottom: .5em;
 `;
 
 export const QuantityBox = styled.div`
-   display: inline-block;
-   padding: 0.2em;
-   font-size: 1.2em;
-   margin-top: 0px;
    text-align: center;
-   justify-content: center;
+   font-size: 1.2em;
+
 `;
 
 export const QuantityLabel = styled.label`
-   font-size: 0.6em;
+   font-size: 0.7em;
    font-weight: normal;
    display: inline-block;
    margin-bottom: auto;
    align-self: center;
+   
 `;
 
 export const FinalRightWrapper = styled.div`
-   margin-left: 1em;
+   flex: 1;
    display: flex;
-   align-self: flex-end;
+
    flex-direction: column;
-   justify-content: center;
+   justify-content: space-evenly;
 `;
 
 export const QuantityWrapper = styled.div`
-   margin-left: 1em;
+
    display: flex;
-   align-self: center;
+
    flex-direction: column;
-   justify-content: center;
+
 `;
 
-export const PlusAndMinusWrapper = styled.div`
-   margin-left: 1em;
-   display: flex;
-   align-self: flex-end;
-   flex-direction: column;
-   justify-content: center;
-`;
-
-export const StyledButton = styled.button`
+export const StyledButtonQuantity = styled.button`
    font-size: 0.8em;
    border-radius: 0.8em;
    border: none;
@@ -119,21 +106,43 @@ export const StyledButton = styled.button`
    background-color: green;
    text-align: center;
    cursor: pointer;
-   margin-bottom: 1em;
-   position: relative;
-   align-self: flex-end;
+   margin-bottom: 5px;
+`;
 
-   :hover {
+export const StyledButton = styled.button`
+   font-size: 0.8em;
+   border-radius: 0.8em;
+   border: none;
+   outline: 0;
+   padding: 0.5em 1em;
+   color: white;
+   background-color: green;
+
+   cursor: pointer;
+
+    margin: 0 auto;
+    margin-bottom: 1em;
+
+
+:hover {
       opacity: 0.7;
    }
 `;
 
 export const ProductImage = styled.img`
    src: ${(props) => props.src};
-   position: relative;
+
    height: 80%;
+
+
    max-height: 150px;
+
+   margin-left: 1em;
    border-style: solid;
    border-width: 1px;
    border-color: darkgrey;
+   margin: 1em;
+   @media (max-width:576px) {
+      
+  }
 `;
