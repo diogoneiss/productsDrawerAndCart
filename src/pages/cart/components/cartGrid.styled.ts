@@ -32,6 +32,7 @@ export const CartItemRepeater = styled.div`
 
    border-style: solid;
    border-width: 1px 0;
+   border-color: darkgrey;
 `;
 export const TotalWrapper = styled.div`
 font-size: 1.5em;
@@ -47,6 +48,7 @@ font-weight: bold;
 
    border-style: solid;
    border-width: 0 0 1px 0;
+   border-color: darkgrey;
    width: 100%;
 `;
 export const TotalSubWrapper = styled.div`

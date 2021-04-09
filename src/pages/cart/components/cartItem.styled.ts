@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const Card = styled.div`
    display: flex;
+   font-weight: bold;
    flex-direction: row;
    justify-content: space-between;
 
@@ -34,24 +35,25 @@ display: flex;
 export const TitleText = styled.span`
 display: flex;
    font-size: 1em;
-   font-weight: 500;
+   font-weight: 700;
    text-align: left;
 `;
 
 export const NewPriceText = styled.span`
    display: flex;
+   margin-top: 0.1em;
    font-size: 1rem;
    font-family: sans-serif;
-   font-weight: 400;
+
 `;
 
 export const OldPriceText = styled.span`
    display: flex;
-
-   font-size: 0.9rem;
+   margin-top: 0.3em;
+   font-size: 0.8em;
    color: darkgray;
    font-family: sans-serif;
-   font-weight: 200;
+
 `;
 
 
@@ -138,4 +140,5 @@ export const ProductImage = styled.img`
    max-height: 150px;
    border-style: solid;
    border-width: 1px; 
+   border-color: darkgrey;
 `;

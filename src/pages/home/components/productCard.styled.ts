@@ -10,11 +10,12 @@ export const Card = styled.div`
    margin: 1rem;
    text-align: center;
    font-family: poppins, sans-serif;
+   font-weight: bold;
+
 `;
 
 export const TitleText = styled.p`
-   font-size: 1.3vw;
-   font-weight: 500;
+   font-size: 1.5e,;
    text-transform: uppercase;
 `;
 
@@ -34,9 +35,10 @@ export const BottomWrapper = styled.div`
 `;
 
 export const PriceText = styled.span`
-   font-size: 1vw;
+   font-size: 1.4em;
+   font-weight: 500;
    font-family: sans-serif;
-   font-weight: 400;
+ 
    display: block;
    max-width: 90%;
    margin: 20px auto 0;
@@ -62,7 +64,7 @@ export const PriceText = styled.span`
     }
  */
 export const AddToCartButton = styled.button`
-   font-size: 0.7vw;
+   font-size: 1em;
    border: none;
    outline: 0;
    padding: 12px;

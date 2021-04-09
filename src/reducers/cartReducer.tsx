@@ -7,7 +7,7 @@ type InitialStateType = {
 };
 
 //estado inicial, com tipos inferidos
-const initialState: InitialStateType = {
+export const initialCartState: InitialStateType = {
    products: [],
    totalPrice: 0,
 };
@@ -16,9 +16,10 @@ export const ACTION_TYPES = {
    ADD_TO_CART: "ADD_TO_CART",
    REMOVE_FROM_CART: "REMOVE_FROM_CART",
    CHANGE_QUANTITY: "CHANGE_QUANTITY",
+   EMPTY_CART: "EMPTY_CART",
 };
 
-const cartReducer = (state = initialState, action: AnyAction) => {
+const cartReducer = (state = initialCartState, action: AnyAction) => {
    switch (action.type) {
       case ACTION_TYPES.ADD_TO_CART: {
          const addedProduct: ProductType = { ...action.payload };
@@ -47,7 +48,7 @@ const cartReducer = (state = initialState, action: AnyAction) => {
          newProductArray.push(addedProduct);
 
          return {
-            totalPrice: addedProduct.price + state.totalPrice,
+            totalPrice: addedProduct.sellingPrice + state.totalPrice,
             products: newProductArray,
          };
       }
@@ -69,7 +70,7 @@ const cartReducer = (state = initialState, action: AnyAction) => {
 
          //se o produto tiver quantidade igual a 1, remover definitivamente
          // do carrinho
-         if (newProductArray[i].quantity === 1) {
+         if (changedQuantity === -1 && newProductArray[i].quantity === 1) {
             //array sem o produto
             newProductArray = newProductArray.filter((product) => product.id !== changedProduct.id);
          }
@@ -79,7 +80,7 @@ const cartReducer = (state = initialState, action: AnyAction) => {
          }
 
          return {
-            totalPrice: state.totalPrice + changedQuantity * changedProduct.price,
+            totalPrice: state.totalPrice + changedQuantity * changedProduct.sellingPrice,
             products: newProductArray,
          };
       }
@@ -91,12 +92,15 @@ const cartReducer = (state = initialState, action: AnyAction) => {
          const newProductArray = state.products.filter((product) => product.id !== removedProduct.id);
 
          return {
-            totalPrice: state.totalPrice - removedProduct.price,
+            totalPrice: state.totalPrice - removedProduct.sellingPrice,
             products: newProductArray,
          };
       }
+      case ACTION_TYPES.EMPTY_CART : {
+         return initialCartState;
+      }
       default:
-         return initialState;
+         return initialCartState;
    }
 };
 
