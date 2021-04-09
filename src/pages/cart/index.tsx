@@ -10,6 +10,10 @@ const BackgroundColor = styled.div`
    background-color: lightcyan;
    padding: 2em;
 `;
+const SkeletonText = styled.p`
+   margin: 5em 0;
+   text-align: center;
+`;
 
 const Cart = () => {
    const cartArray = useAppSelector((state) => state.cartReducer.products);
@@ -18,11 +22,6 @@ const Cart = () => {
    const IteradorProdutos = () => {
       return <>{cartArray !== undefined && cartArray.map((item, key) => <CartItem {...item} key={key} />)}</>;
    };
-
-   const SkeletonText = styled.p`
-      margin: 5em 0;
-      text-align: center;
-   `;
 
    //se não houver produtos renderiza que o carrinho estpa vazio
    const DecideWhatToRender = () => {

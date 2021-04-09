@@ -2,9 +2,8 @@ import React from "react";
 import * as StyledComponents from "./cartGrid.styled";
 import { emptyCart } from "../../../actions/cartActions";
 import { useDispatch } from "react-redux";
-
-import Link from "../../../components/Link";
 import { useAppSelector } from "../../../Redux/hooks";
+import { useHistory } from "react-router";
 
 type ComponentProps = {
    children?: React.ReactNode;
@@ -12,9 +11,17 @@ type ComponentProps = {
 
 const ProductGrid: React.FC<ComponentProps> = ({ children }) => {
    const dispatch = useDispatch();
-
-   const valorTotal: number = useAppSelector((state) => state.cartReducer.totalPrice);
+   const history = useHistory();
+   const valorTotal = useAppSelector((state) => state.cartReducer.totalPrice);
    const formatedValue = valorTotal?.toPrecision(4);
+
+   const ShowTotalValue = () => {
+      if (valorTotal <= 0) {
+         return <>R$ 0</>;
+      }
+      return <>R$ {formatedValue?.toString()?.replace(".", ",")}</>;
+   };
+
    return (
       <StyledComponents.WrapperContainer>
          <StyledComponents.HeaderArea>Meu carrinho</StyledComponents.HeaderArea>
@@ -23,7 +30,7 @@ const ProductGrid: React.FC<ComponentProps> = ({ children }) => {
             <StyledComponents.TotalSubWrapper>
                <StyledComponents.TotalText>Total </StyledComponents.TotalText>
                <StyledComponents.PriceText>
-                  R$ {formatedValue?.toString()?.replace(".", ",") || "0,00"}
+                  <ShowTotalValue />
                </StyledComponents.PriceText>
             </StyledComponents.TotalSubWrapper>
             {valorTotal > 12.0 && (
@@ -31,8 +38,13 @@ const ProductGrid: React.FC<ComponentProps> = ({ children }) => {
             )}
          </StyledComponents.TotalWrapper>
 
-         <StyledComponents.LastButton onClick={() => dispatch(emptyCart())}>
-            <Link destination="/checkout"> Finalizar compra</Link>
+         <StyledComponents.LastButton
+            onClick={() => {
+               dispatch(emptyCart());
+               history.push("/checkout");
+            }}
+         >
+            Finalizar compra
          </StyledComponents.LastButton>
       </StyledComponents.WrapperContainer>
    );

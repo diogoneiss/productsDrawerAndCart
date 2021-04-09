@@ -68,12 +68,13 @@ export const RightmostWrapper = styled.div`
    margin-left: 1em;
 `;
 
-export const QuantityBox = styled.input`
+export const QuantityBox = styled.div`
    display: inline-block;
-   max-width: 2em;
-   max-height: 2em;
+   padding: 0.2em;
    font-size: 1.2em;
    margin-top: 0px;
+   text-align: center;
+   justify-content: center;
 `;
 
 export const QuantityLabel = styled.label`

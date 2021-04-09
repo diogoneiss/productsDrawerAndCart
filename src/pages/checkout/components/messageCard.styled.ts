@@ -37,7 +37,7 @@ export const LastButton = styled.button`
    font-weight: bold;
    position: relative;
    margin: 2em;
-
+   cursor: pointer;
    padding: 1em;
    border: 0;
    background-color: green;

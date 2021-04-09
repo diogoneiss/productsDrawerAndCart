@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import * as StyledComponents from "./cartItem.styled";
 import Logo from "../../../logo.svg";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { ProductType } from "../../../types";
 import * as Actions from "../../../actions/cartActions";
 
@@ -26,15 +26,8 @@ const ProductCard: React.FC<ProductType> = (product, { key }) => {
          <StyledComponents.FinalRightWrapper>
             <StyledComponents.RightmostWrapper>
                <StyledComponents.QuantityWrapper>
-                  <StyledComponents.QuantityBox
-                     type="number"
-                     id="quantity"
-                     name="quantity"
-                     value={localQuantity}
-                     max="2"
-                     readOnly
-                  />
-                  <StyledComponents.QuantityLabel htmlFor="quantity">Qtd</StyledComponents.QuantityLabel>
+                  <StyledComponents.QuantityBox id="quantity">{localQuantity}</StyledComponents.QuantityBox>
+                  <StyledComponents.QuantityLabel>Qtd</StyledComponents.QuantityLabel>
                </StyledComponents.QuantityWrapper>
 
                <StyledComponents.QuantityWrapper>

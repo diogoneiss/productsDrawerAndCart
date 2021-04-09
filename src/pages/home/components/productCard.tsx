@@ -1,19 +1,12 @@
 import React from "react";
 import * as StyledComponents from "./productCard.styled";
 import Logo from "../../../logo.svg";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { ProductType } from "../../../types";
 import addProductToCart from "../../../actions/cartActions";
 
-type ComponentType = {
-   product: ProductType;
-   key: String;
-};
-
-const ProductCard: React.FC<ComponentType> = ({ product, key }) => {
+const ProductCard: React.FC<ProductType> = (product) => {
    const dispatch = useDispatch();
-
-   const chaveUnica = key;
 
    return (
       <StyledComponents.Card>

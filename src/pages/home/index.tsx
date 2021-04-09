@@ -58,7 +58,7 @@ const Home = () => {
       return (
          <>
             {productArray.map((item, key) => (
-               <ProductCard product={item} key={item.id.toString()} />
+               <ProductCard {...item} key={item.id.toString()} />
             ))}
          </>
       );

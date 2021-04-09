@@ -1,8 +1,6 @@
 import React from "react";
-import { useSelector } from "react-redux";
-import { RootState } from "../Redux/Store";
+import { useHistory } from "react-router";
 import styled from "styled-components";
-import { Link } from "react-router-dom";
 import { useAppSelector } from "../Redux/hooks";
 
 const NavbarWrapper = styled.div`
@@ -23,7 +21,7 @@ const Button = styled.button`
    color: black;
    padding: 1em;
    border-radius: 0.2em;
-
+   cursor: pointer;
    :hover {
       background-color: #f0f0f0;
    }
@@ -37,7 +35,7 @@ type propTypes = {
 
 const Navbar = (props: propTypes) => {
    const produtosArray = useAppSelector((state) => state.cartReducer.products);
-
+   const history = useHistory();
    const ShownNumber = () => {
       if (props.showNumberOfItens === undefined || props.showNumberOfItens)
          return <span>({produtosArray.length} itens) </span>;
@@ -45,16 +43,12 @@ const Navbar = (props: propTypes) => {
    };
 
    return (
-      <>
-         <NavbarWrapper>
-            <Link style={{ textDecoration: "none" }} to={props.linkPath || "/carrinho"}>
-               <Button>
-                  {props.buttonText || "Ir para carrinho "}
-                  <ShownNumber />
-               </Button>
-            </Link>
-         </NavbarWrapper>
-      </>
+      <NavbarWrapper>
+         <Button onClick={() => history.push(props.linkPath || "/carrinho")}>
+            {props.buttonText || "Ir para carrinho "}
+            <ShownNumber />
+         </Button>
+      </NavbarWrapper>
    );
 };
 
