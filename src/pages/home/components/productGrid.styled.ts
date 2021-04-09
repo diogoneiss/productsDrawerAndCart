@@ -8,6 +8,4 @@ export const WrapperContainer = styled.div`
    justify-content: center;
    margin: 0 auto;
    max-width: 80%;
-
-
 `;

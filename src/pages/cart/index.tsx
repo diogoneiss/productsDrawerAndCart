@@ -10,8 +10,8 @@ import Navbar from "../../components/navbar";
 import styled from "styled-components";
 
 const BackgroundColor = styled.div`
-background-color: lightcyan;
-padding: 2em;
+   background-color: lightcyan;
+   padding: 2em;
 `;
 
 const Cart = () => {
@@ -24,27 +24,24 @@ const Cart = () => {
    };
 
    const SkeletonText = styled.p`
-   margin: 5em 0;
-   text-align: center;
+      margin: 5em 0;
+      text-align: center;
    `;
 
    const DecideWhatToRender = () => {
-       if(cartArray.length === 0){
-           return <SkeletonText>Carrinho vazio</SkeletonText>
-       }
-      return <IteradorProdutos />
-
-   }
-
-
+      if (cartArray.length === 0) {
+         return <SkeletonText>Carrinho vazio</SkeletonText>;
+      }
+      return <IteradorProdutos />;
+   };
 
    return (
       <React.Fragment>
          <Navbar linkPath="/" buttonText="Voltar para produtos" showNumberOfItens={false} />
-        <BackgroundColor>
-         <CartGrid>
-            <DecideWhatToRender />
-         </CartGrid>
+         <BackgroundColor>
+            <CartGrid>
+               <DecideWhatToRender />
+            </CartGrid>
          </BackgroundColor>
       </React.Fragment>
    );

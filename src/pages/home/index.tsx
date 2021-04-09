@@ -12,7 +12,7 @@ const Home = () => {
    let productArray: Array<ProductType> = [];
    const crudeJsonAcima = DataAcima.items;
    const crudeJsonAbaixo = DataAbaixo.items;
-  
+
    //juntar no array
    for (let i = 0; i < crudeJsonAcima.length; i++) {
       //coloco 1 de quantidade pq não faz sentido colocar a mesma do json, já que estou fazendo o grid de produtos
@@ -26,8 +26,8 @@ const Home = () => {
          quantity: 1,
       });
    }
-     //juntar no array agora o segundo json
-     for (let i = 0; i < crudeJsonAbaixo.length; i++) {
+   //juntar no array agora o segundo json
+   for (let i = 0; i < crudeJsonAbaixo.length; i++) {
       //coloco 1 de quantidade pq não faz sentido colocar a mesma do json, já que estou fazendo o grid de produtos
       productArray.push({
          name: crudeJsonAbaixo[i].name,
@@ -57,7 +57,6 @@ const Home = () => {
          <HeadingText />
          <ProductGrid>
             <IteradorProdutos />
-            
          </ProductGrid>
       </React.Fragment>
    );

@@ -21,35 +21,43 @@ const ProductCard: React.FC<ProductType> = (product, { key }) => {
                <StyledComponents.NewPriceText>R${"" + product.sellingPrice}</StyledComponents.NewPriceText>
             </StyledComponents.MiddleWrapper>
          </StyledComponents.UpperWrapper>
-    
 
          <StyledComponents.FinalRightWrapper>
-         <StyledComponents.RightmostWrapper>
+            <StyledComponents.RightmostWrapper>
+               <StyledComponents.QuantityWrapper>
+                  <StyledComponents.QuantityBox
+                     type="number"
+                     id="quantity"
+                     name="quantity"
+                     value={localQuantity}
+                     max="2"
+                     readOnly
+                  />
+                  <StyledComponents.QuantityLabel htmlFor="quantity">Qtd</StyledComponents.QuantityLabel>
+               </StyledComponents.QuantityWrapper>
 
-         <StyledComponents.QuantityWrapper>
-         <StyledComponents.QuantityBox type="number" id="quantity" name="quantity" value={localQuantity} max="2" readOnly />
-         <StyledComponents.QuantityLabel htmlFor="quantity">Qtd</StyledComponents.QuantityLabel>
-         </StyledComponents.QuantityWrapper>
-
-            <StyledComponents.QuantityWrapper>
-               <StyledComponents.StyledButton onClick={() => {
-                  dispatch( Actions.changeProductQuantity(product, +1))
-                  setLocalQuantity(localQuantity+1);
-                  }
-               }>
-                  {" + "}
-               </StyledComponents.StyledButton>
-               <StyledComponents.StyledButton onClick={() =>{
-                  dispatch(  Actions.changeProductQuantity(product, -1))
-                  setLocalQuantity(localQuantity-1);
-               }
-               }>
-                  {" - "}
-               </StyledComponents.StyledButton>
-            </StyledComponents.QuantityWrapper>
-          
-         </StyledComponents.RightmostWrapper>
-         <StyledComponents.StyledButton onClick={() => dispatch(  Actions.removeProductToCart(product))}>Remover</StyledComponents.StyledButton>
+               <StyledComponents.QuantityWrapper>
+                  <StyledComponents.StyledButton
+                     onClick={() => {
+                        dispatch(Actions.changeProductQuantity(product, +1));
+                        setLocalQuantity(localQuantity + 1);
+                     }}
+                  >
+                     {" + "}
+                  </StyledComponents.StyledButton>
+                  <StyledComponents.StyledButton
+                     onClick={() => {
+                        dispatch(Actions.changeProductQuantity(product, -1));
+                        setLocalQuantity(localQuantity - 1);
+                     }}
+                  >
+                     {" - "}
+                  </StyledComponents.StyledButton>
+               </StyledComponents.QuantityWrapper>
+            </StyledComponents.RightmostWrapper>
+            <StyledComponents.StyledButton onClick={() => dispatch(Actions.removeProductToCart(product))}>
+               Remover
+            </StyledComponents.StyledButton>
          </StyledComponents.FinalRightWrapper>
       </StyledComponents.Card>
    );

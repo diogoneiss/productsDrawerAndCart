@@ -12,13 +12,12 @@ export const Card = styled.div`
 `;
 
 export const MiddleWrapper = styled.div`
-display: flex;
+   display: flex;
    margin-left: 2em;
    flex-direction: column;
-    justify-content: flex-start;
+   justify-content: flex-start;
 
-    
-    align-items: flex-start; 
+   align-items: flex-start;
 `;
 /**
  *     display: flex;
@@ -33,7 +32,7 @@ display: flex;
     text-align: left;
  */
 export const TitleText = styled.span`
-display: flex;
+   display: flex;
    font-size: 1em;
    font-weight: 700;
    text-align: left;
@@ -44,7 +43,6 @@ export const NewPriceText = styled.span`
    margin-top: 0.1em;
    font-size: 1rem;
    font-family: sans-serif;
-
 `;
 
 export const OldPriceText = styled.span`
@@ -53,9 +51,7 @@ export const OldPriceText = styled.span`
    font-size: 0.8em;
    color: darkgray;
    font-family: sans-serif;
-
 `;
-
 
 export const UpperWrapper = styled.div`
    align-items: center;
@@ -63,7 +59,6 @@ export const UpperWrapper = styled.div`
    flex-direction: row;
    justify-content: center;
 `;
-
 
 export const RightmostWrapper = styled.div`
    display: flex;
@@ -74,20 +69,19 @@ export const RightmostWrapper = styled.div`
 `;
 
 export const QuantityBox = styled.input`
-display: inline-block;
-max-width: 2em;
-max-height: 2em;
-font-size: 1.2em;
-margin-top: 0px;
-
-
+   display: inline-block;
+   max-width: 2em;
+   max-height: 2em;
+   font-size: 1.2em;
+   margin-top: 0px;
 `;
 
 export const QuantityLabel = styled.label`
-font-size: 0.5em;
-display: inline-block;
-margin-bottom: auto;
-align-self: center;
+   font-size: 0.6em;
+   font-weight: normal;
+   display: inline-block;
+   margin-bottom: auto;
+   align-self: center;
 `;
 
 export const FinalRightWrapper = styled.div`
@@ -139,6 +133,6 @@ export const ProductImage = styled.img`
    height: 80%;
    max-height: 150px;
    border-style: solid;
-   border-width: 1px; 
+   border-width: 1px;
    border-color: darkgrey;
 `;

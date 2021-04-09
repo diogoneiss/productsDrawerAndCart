@@ -11,11 +11,10 @@ export const Card = styled.div`
    text-align: center;
    font-family: poppins, sans-serif;
    font-weight: bold;
-
 `;
 
 export const TitleText = styled.p`
-   font-size: 1.5e,;
+   font-size: 1.5e;
    text-transform: uppercase;
 `;
 
@@ -38,7 +37,7 @@ export const PriceText = styled.span`
    font-size: 1.4em;
    font-weight: 500;
    font-family: sans-serif;
- 
+
    display: block;
    max-width: 90%;
    margin: 20px auto 0;

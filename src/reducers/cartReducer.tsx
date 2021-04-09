@@ -96,7 +96,7 @@ const cartReducer = (state = initialCartState, action: AnyAction) => {
             products: newProductArray,
          };
       }
-      case ACTION_TYPES.EMPTY_CART : {
+      case ACTION_TYPES.EMPTY_CART: {
          return initialCartState;
       }
       default:

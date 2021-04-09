@@ -19,16 +19,14 @@ const removeProductAction = (payload: ProductType) => {
 const editProductQuantity = (product: ProductType, change: number) => {
    return {
       type: ACTION_TYPES.CHANGE_QUANTITY,
-     payload: {product: product,
-      change: change},
+      payload: { product: product, change: change },
    };
 };
 export const emptyCart = () => {
    return {
-      type: ACTION_TYPES.EMPTY_CART
+      type: ACTION_TYPES.EMPTY_CART,
    };
 };
-
 
 export const addProductToCart = (product: ProductType) => (
    dispatch: (arg0: { type: string; payload: ProductType }) => void,
@@ -60,24 +58,19 @@ export const removeProductToCart = (product: ProductType) => (
    }
 };
 
-export const changeProductQuantity = (product: ProductType, change: number) =>  
-(dispatch: (arg0: { type: string; payload: { product: ProductType; change: number; }; }) => void) => {
+export const changeProductQuantity = (product: ProductType, change: number) => (
+   dispatch: (arg0: { type: string; payload: { product: ProductType; change: number } }) => void,
+) => {
    try {
       console.log("Modificando no carrinho: ");
 
       console.log(product);
       if (product.id === undefined || product.id === null) throw Error("Id do produto em branco.");
 
-
-
-
       dispatch(editProductQuantity(product, change));
    } catch (e: any) {
       alert(e.message);
    }
 };
-
-
-
 
 export default addProductToCart;

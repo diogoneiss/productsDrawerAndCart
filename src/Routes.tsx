@@ -5,6 +5,7 @@ import { Switch, Route, Redirect } from "react-router-dom";
 import Home from "./pages/home";
 import Cart from "./pages/cart";
 import NotFound from "./pages/notFound";
+import Checkout from "./pages/checkout";
 
 const Routes = () => {
    const dispatch = useDispatch();
@@ -19,11 +20,9 @@ const Routes = () => {
          <Switch>
             <Route path="/" exact={true} component={() => <Home />} />
             <Route path="/carrinho" exact={true} component={() => <Cart />} />
-            <Route path="/pagamento" exact={true} component={() => <br />} />
+            <Route path="/checkout" exact={true} component={() => <Checkout />} />
 
-            
-             <Route path="*" component={() => <NotFound />} />
-            
+            <Route path="*" component={() => <NotFound />} />
          </Switch>
       </div>
    );

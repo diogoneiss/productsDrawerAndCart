@@ -6,11 +6,11 @@ import { ProductType } from "../../../types";
 import addProductToCart from "../../../actions/cartActions";
 
 type ComponentType = {
-   product: ProductType,
-   key: String
-}
+   product: ProductType;
+   key: String;
+};
 
-const ProductCard:React.FC<ComponentType> = ({product, key }) => {
+const ProductCard: React.FC<ComponentType> = ({ product, key }) => {
    const dispatch = useDispatch();
 
    const chaveUnica = key;
@@ -18,7 +18,7 @@ const ProductCard:React.FC<ComponentType> = ({product, key }) => {
    return (
       <StyledComponents.Card>
          <StyledComponents.UpperWrapper>
-            <StyledComponents.ProductImage  src={product.img || Logo} />
+            <StyledComponents.ProductImage src={product.img || Logo} />
 
             <StyledComponents.TitleText>{product.name}</StyledComponents.TitleText>
          </StyledComponents.UpperWrapper>

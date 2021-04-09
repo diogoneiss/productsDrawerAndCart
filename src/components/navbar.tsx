@@ -8,7 +8,7 @@ const NavbarWrapper = styled.div`
    display: flex;
    flex-direction: row;
    justify-content: center;
-   background-color: blueviolet;
+   background-color: slateblue;
    margin: 0;
    padding: 2em;
    color: white;
@@ -24,6 +24,7 @@ const Button = styled.button`
    border: 0;
    color: black;
    padding: 1em;
+   border-radius: 0.2em;
 
    :hover {
       background-color: #f0f0f0;
