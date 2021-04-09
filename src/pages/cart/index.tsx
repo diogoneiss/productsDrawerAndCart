@@ -1,13 +1,10 @@
 import React from "react";
-import { useSelector } from "react-redux";
-import { RootState } from "../../Store";
 import CartItem from "./components/cartItem";
 import CartGrid from "./components/cartGrid";
-import Logo from "../../logo.svg";
-import Data from "../../data/abaixo-10-reais.json";
-import { ProductType } from "../../types";
+
 import Navbar from "../../components/navbar";
 import styled from "styled-components";
+import { useAppSelector } from "../../Redux/hooks";
 
 const BackgroundColor = styled.div`
    background-color: lightcyan;
@@ -15,8 +12,7 @@ const BackgroundColor = styled.div`
 `;
 
 const Cart = () => {
-   const cartArray = useSelector((state: RootState) => state.cartReducer.products);
-   console.log(cartArray);
+   const cartArray = useAppSelector((state) => state.cartReducer.products);
 
    //mapeia um card para cada item no array, usando desestruturação, já que sei o tipo de objeto
    const IteradorProdutos = () => {
@@ -28,6 +24,7 @@ const Cart = () => {
       text-align: center;
    `;
 
+   //se não houver produtos renderiza que o carrinho estpa vazio
    const DecideWhatToRender = () => {
       if (cartArray.length === 0) {
          return <SkeletonText>Carrinho vazio</SkeletonText>;

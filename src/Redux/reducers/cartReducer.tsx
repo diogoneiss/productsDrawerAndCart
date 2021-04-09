@@ -1,5 +1,5 @@
-import { AnyAction } from "redux";
-import { ProductType } from "../types/index";
+import { AnyAction, Reducer } from "redux";
+import { ProductType } from "../../types/index";
 
 type InitialStateType = {
    products: ProductType[];
@@ -19,7 +19,7 @@ export const ACTION_TYPES = {
    EMPTY_CART: "EMPTY_CART",
 };
 
-const cartReducer = (state = initialCartState, action: AnyAction) => {
+const cartReducer: Reducer<InitialStateType> = (state = initialCartState, action: AnyAction) => {
    switch (action.type) {
       case ACTION_TYPES.ADD_TO_CART: {
          const addedProduct: ProductType = { ...action.payload };

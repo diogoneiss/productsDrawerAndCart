@@ -1,5 +1,6 @@
 import styled from "styled-components";
 
+//componente que envolvera todos os outros
 export const WrapperContainer = styled.div`
    background-color: white;
    display: flex;
@@ -15,6 +16,7 @@ export const WrapperContainer = styled.div`
    border-radius: 0.5em;
 `;
 
+//área de header, contendo o titulo da sessão
 export const HeaderArea = styled.h1`
    font-size: 2em;
    font-weight: bold;
@@ -22,6 +24,7 @@ export const HeaderArea = styled.h1`
    margin-bottom: 0.6em;
 `;
 
+//repetidor com todos os CartItems
 export const CartItemRepeater = styled.div`
    display: flex;
    align-items: stretch;
@@ -32,6 +35,8 @@ export const CartItemRepeater = styled.div`
    border-width: 1px 0;
    border-color: darkgrey;
 `;
+
+//Wrapper que conterá Total, Preço e a mensagem de frete grátis, como column
 export const TotalWrapper = styled.div`
    font-size: 1.5em;
    font-weight: bold;
@@ -49,6 +54,7 @@ export const TotalWrapper = styled.div`
    border-color: darkgrey;
    width: 100%;
 `;
+//wrapper contendo apenas o total e preço, como row
 export const TotalSubWrapper = styled.div`
    padding: 1em;
 
@@ -59,6 +65,7 @@ export const TotalSubWrapper = styled.div`
    width: 90%;
 `;
 
+//componentes de total e preço
 export const TotalText = styled.span`
    display: flex;
    align-self: flex-start;
@@ -67,6 +74,7 @@ export const PriceText = styled.span`
    display: flex;
    margin-left: auto;
 `;
+//div contendo o frete grátis
 export const ParabensBox = styled.div`
    font-size: large;
    padding: 1em;
@@ -75,6 +83,7 @@ export const ParabensBox = styled.div`
    background-color: lightgreen;
    margin-bottom: 1em;
 `;
+//botão de pagar e continuar
 export const LastButton = styled.button`
    font-size: 2em;
    font-weight: bold;

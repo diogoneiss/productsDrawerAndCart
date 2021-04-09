@@ -7,6 +7,7 @@ import * as Actions from "../../../actions/cartActions";
 
 const ProductCard: React.FC<ProductType> = (product, { key }) => {
    const dispatch = useDispatch();
+   //quantidade local, já que não estou usando useSelector
    const [localQuantity, setLocalQuantity] = useState<number>(product.quantity);
    return (
       <StyledComponents.Card>

@@ -3,11 +3,15 @@ import Navbar from "../../components/navbar";
 import styled from "styled-components";
 // import { Container } from './styles';
 
+const Text = styled.h1`
+   text-align: "center";
+`;
+
 const NotFound: React.FC = () => {
    return (
       <React.Fragment>
          <Navbar buttonText="Voltar para home" linkPath="/" showNumberOfItens={false} />
-         <h1 style={{ textAlign: "center" }}>Ops! Página não encontrada..</h1>
+         <Text>Ops! Página não encontrada..</Text>
       </React.Fragment>
    );
 };

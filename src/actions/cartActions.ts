@@ -1,7 +1,4 @@
-import React, { Dispatch } from "react";
-import { AnyAction } from "redux";
-import thunk from "redux-thunk";
-import { ACTION_TYPES } from "../reducers/cartReducer";
+import { ACTION_TYPES } from "../Redux/reducers/cartReducer";
 import { ProductType } from "../types";
 
 const addProductAction = (payload: ProductType) => {

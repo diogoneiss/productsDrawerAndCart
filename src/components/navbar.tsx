@@ -1,8 +1,9 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import { RootState } from "../Store";
+import { RootState } from "../Redux/Store";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import { useAppSelector } from "../Redux/hooks";
 
 const NavbarWrapper = styled.div`
    display: flex;
@@ -14,10 +15,7 @@ const NavbarWrapper = styled.div`
    color: white;
    flex-wrap: wrap;
 `;
-const FlexBreak = styled.br`
-   flex-basis: 100%;
-   height: 0;
-`;
+
 const Button = styled.button`
    font-size: medium;
    background-color: white;
@@ -38,7 +36,7 @@ type propTypes = {
 };
 
 const Navbar = (props: propTypes) => {
-   const produtosArray = useSelector((state: RootState) => state.cartReducer.products);
+   const produtosArray = useAppSelector((state) => state.cartReducer.products);
 
    const ShownNumber = () => {
       if (props.showNumberOfItens === undefined || props.showNumberOfItens)
@@ -55,7 +53,6 @@ const Navbar = (props: propTypes) => {
                   <ShownNumber />
                </Button>
             </Link>
-            <FlexBreak />
          </NavbarWrapper>
       </>
    );

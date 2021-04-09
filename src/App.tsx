@@ -1,8 +1,6 @@
 import React from "react";
-import logo from "./logo.svg";
-import { Counter } from "./features/counter/Counter";
 import { BrowserRouter } from "react-router-dom";
-import ReduxWrapper from "./Store";
+import ReduxWrapper from "./Redux/Store";
 import Routes from "./Routes";
 
 //import Header from "./Components/Header/Navbar";

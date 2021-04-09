@@ -1,16 +1,19 @@
 import React from "react";
 import * as StyledComponents from "./cartGrid.styled";
 import { emptyCart } from "../../../actions/cartActions";
-import { useDispatch, useSelector } from "react-redux";
-import { RootState } from "../../../app/store";
+import { useDispatch } from "react-redux";
+
 import Link from "../../../components/Link";
+import { useAppSelector } from "../../../Redux/hooks";
+
 type ComponentProps = {
    children?: React.ReactNode;
 };
 
 const ProductGrid: React.FC<ComponentProps> = ({ children }) => {
    const dispatch = useDispatch();
-   const valorTotal: number = useSelector((state: RootState) => state.cartReducer.totalPrice);
+
+   const valorTotal: number = useAppSelector((state) => state.cartReducer.totalPrice);
    const formatedValue = valorTotal?.toPrecision(4);
    return (
       <StyledComponents.WrapperContainer>

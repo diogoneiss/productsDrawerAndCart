@@ -14,6 +14,7 @@ const styledJson = {
    textDecoration: "none",
 };
 
+//estilizacao do component Link, tirando o estilo padrão
 const LinkComponent: React.FC<PropTypes> = ({ children, destination }) => {
    return (
       <Link style={styledJson} to={destination}>

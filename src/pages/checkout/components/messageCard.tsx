@@ -1,11 +1,8 @@
 import React from "react";
 import * as StyledComponents from "./messageCard.styled";
 import Link from "../../../components/Link";
-type ComponentProps = {
-   children?: React.ReactNode;
-};
 
-const ProductGrid: React.FC<ComponentProps> = ({ children }) => {
+const ProductGrid: React.FC = () => {
    return (
       <StyledComponents.WrapperContainer>
          <StyledComponents.HeaderArea>Sucesso!</StyledComponents.HeaderArea>
